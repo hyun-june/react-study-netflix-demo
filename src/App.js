@@ -23,10 +23,6 @@ function App() {
             <Route index element={<MoviePage/>}/>
             <Route path=":id" element={<MovieDetailPage/>} />
           </Route>
-          {/* { <Route path="/movies" element={<MoviePage/>} />
-          <Route path="/movies/:id" element={<MovieDetailPage/>} /> 
-          위랑 같은 의미 Movies를 쓰는 라우트들을 묶어줌
-          } */}
         </Route>
 
         <Route path="*" element={<NotFoundPage/>}/>     

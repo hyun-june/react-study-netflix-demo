@@ -68,9 +68,6 @@ const MoviePage = () => {
       <Row>
 
         <Col lg={3} xs={12}>
-        {/* <button onClick={()=>setSelectFilter('default')}>기본</button>
-        <button onClick={()=>setSelectFilter('popularity')}>인기순</button>
-        <button onClick={()=>setSelectFilter('average')}>평점순</button> */}
         <Dropdown>
         <Dropdown.Toggle variant="secondary" id="dropdown-basic">
               {selectFilter === 'default' ? '기본' : selectFilter === 'popularity' ? '인기순' : '평점순'}
