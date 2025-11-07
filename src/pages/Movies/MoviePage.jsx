@@ -17,7 +17,7 @@ import { useMoviesIdList } from "../../hooks/useMoviesIdList";
 // 페이지네이션 클릭할때마다 page 바꿔주기
 // page 값이 바뀔때 마다 useSearchMovie에 page까지 넣어서 fetch
 const MoviePage = () => {
-  const [query, _setQuery] = useSearchParams();
+  const [query] = useSearchParams();
   const keyword = query.get("q");
   const [page, setPage] = useState(1);
   const [selectFilter, setSelectFilter] = useState("default");
@@ -31,7 +31,6 @@ const MoviePage = () => {
     data: idData,
     isLoading: idisLoading,
     isError: idisError,
-    error: _iderror,
   } = useMoviesIdList();
   const handlePageClick = ({ selected }) => {
     setPage(selected + 1);
