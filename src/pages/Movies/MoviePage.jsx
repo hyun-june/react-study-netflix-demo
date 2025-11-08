@@ -107,10 +107,11 @@ const MoviePage = () => {
             </Dropdown.Menu>
           </Dropdown>
           <div className="badge-area">
-            {idData.map((item) => (
+            {idData?.map((item, index) => (
               <div
                 className="genre-badge-btn"
                 onClick={() => selectGenre(item.id)}
+                key={index}
               >
                 {item.name}
               </div>
@@ -119,9 +120,9 @@ const MoviePage = () => {
         </Col>
         <Col lg={9} xs={12}>
           <Row>
-            {dataSort().map((movie, index) => (
+            {dataSort()?.map((movie, index) => (
               <Col className="movie-section" lg={3} xs={12} key={index}>
-                <MovieCard movie={movie} />
+                <MovieCard movie={movie} key={index} />
               </Col>
             ))}
           </Row>

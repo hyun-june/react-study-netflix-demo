@@ -5,7 +5,7 @@ import { Spinner } from "react-bootstrap";
 
 const Banner = () => {
   const { data, isLoading, isError, error } = useNowPlayingMoviesQuery();
-  console.log("banner", data);
+  // console.log("banner", data);
   if (isLoading) {
     return (
       <div>
