@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MoviePage.style.css";
 import { useSearchMovieQuery } from "../../hooks/useSearchMovie";
 import { useSearchParams } from "react-router-dom";
@@ -27,6 +27,7 @@ const MoviePage = () => {
     keyword,
     page,
   });
+  console.log("🚀 ~ MoviePage ~ data:", data);
   const {
     data: idData,
     isLoading: idisLoading,
@@ -35,6 +36,10 @@ const MoviePage = () => {
   const handlePageClick = ({ selected }) => {
     setPage(selected + 1);
   };
+
+  useEffect(() => {
+    setPage(1);
+  }, [keyword]);
 
   const dataSort = () => {
     if (!data || !data.results) return [];
@@ -120,11 +125,27 @@ const MoviePage = () => {
         </Col>
         <Col lg={9} xs={12}>
           <Row>
-            {dataSort()?.map((movie, index) => (
+            {/* {dataSort()?.map((movie, index) => (
               <Col className="movie-section" lg={3} xs={12} key={index}>
                 <MovieCard movie={movie} key={index} />
               </Col>
-            ))}
+            ))} */}
+            {dataSort()?.length === 0 ? (
+              <div className="no-result-message text-center mt-5">
+                <Alert variant="warning">
+                  검색 결과가 없습니다.
+                  {keyword && (
+                    <div>“{keyword}”에 대한 결과를 찾을 수 없습니다.</div>
+                  )}
+                </Alert>
+              </div>
+            ) : (
+              dataSort()?.map((movie) => (
+                <Col className="movie-section" lg={3} xs={12} key={movie.id}>
+                  <MovieCard movie={movie} />
+                </Col>
+              ))
+            )}
           </Row>
         </Col>
         <div className="pagination-area">
