@@ -27,7 +27,7 @@ const MovieDetail = () => {
 
   if (isLoading && previewLoading) {
     return (
-      <div>
+      <div className="spinner_wrapper">
         <Spinner
           animation="border"
           variant="danger"
@@ -58,8 +58,10 @@ const MovieDetail = () => {
           <Col lg={8} xs={12}>
             <h3 className="detail-tag">{data?.tagline}</h3>
             <div className="detail-genre">
-              {data?.genres.map((movie) => (
-                <Badge bg="danger">{movie.name}</Badge>
+              {data?.genres.map((movie, index) => (
+                <Badge bg="danger" key={index}>
+                  {movie.name}
+                </Badge>
               ))}
             </div>
             <h2 className="detail-title">{data?.title}</h2>
@@ -74,7 +76,9 @@ const MovieDetail = () => {
 
             <Modal show={show} onHide={handleClose} size="lg">
               <Modal.Body>
-                <YouTube videoId={previewData?.results[0].key} opts={opts} />
+                <div className="youtube_wrapper">
+                  <YouTube videoId={previewData?.results[0]?.key} opts={opts} />
+                </div>
               </Modal.Body>
             </Modal>
           </Col>

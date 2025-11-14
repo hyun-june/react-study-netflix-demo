@@ -10,7 +10,7 @@ const PopularMovieSlide = () => {
   // console.log("popularMovie",data)
   if (isLoading) {
     return (
-      <div>
+      <div className="spinner_wrapper">
         <Spinner
           animation="border"
           variant="danger"

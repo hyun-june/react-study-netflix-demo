@@ -1,71 +1,87 @@
-.detail-container{
-    padding-top: 2rem;
-    width: 80%;
+.detail-container {
+  padding-top: 2rem;
+  width: 80%;
 }
-.detail-section{
-    background-color: #5c5d61;
-    padding: 1rem;
-    border-radius: 10px;
-}
-
-.detail-poster{
-    width: 300px;
-    height: 450px;
-    background-size: cover;
-    border-radius: 10px;
+.detail-section {
+  background-color: #5c5d61;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
-.detail-tag{
-    animation: detail-tag 2s 0s ease infinite;
-    -moz-animation: detail-tag 2s 0s ease infinite;
-    /* Firefox */
-    -webkit-animation: detail-tag 2s 0s ease infinite;
-    /* Safari and Chrome */
-    -o-animation: detail-tag 2s 0s ease infinite;
+.detail-poster {
+  width: 300px;
+  height: 450px;
+  background-size: cover;
+  border-radius: 10px;
 }
 
+.detail-tag {
+  animation: detail-tag 2s 0s ease infinite;
+  -moz-animation: detail-tag 2s 0s ease infinite;
+  /* Firefox */
+  -webkit-animation: detail-tag 2s 0s ease infinite;
+  /* Safari and Chrome */
+  -o-animation: detail-tag 2s 0s ease infinite;
+}
 
 @keyframes detail-tag {
-    0%,
-    100% {
-        text-shadow: 
-        -1px 0px 10px #FED128, -1.5px 0px 10px #FED128, -2px 0px 10px #FED128, 
-        -1px 0px 10px #F0130B, -2px 0px 10px #F0130B, -4px 0px 10px #F0130B,
-        -1px 0px 10px #F0130B, -2px 0px 10px #F0130B, -4px 0px 10px #F0130B, 2px 0px 10px #F0130B;
-          color: #FED128;
-        }
-        50% {
-        text-shadow: 
-        -1px 0px 10px #705C12, -1.5px 0px 10px #705C12, -2px 0px 10px #705C12, 
-        -1px 0px 10px #5C0704, -2px 0px 10px #5C0704, -4px 0px 10px #5C0704,
-        -1px 0px 10px #5C0704, -2px 0px 10px #5C0704, -4px 0px 10px #5C0704, 2px 0px 10px #5C0704;
-          color: #705C12;
-        }
+  0%,
+  100% {
+    text-shadow: -1px 0px 10px #fed128, -1.5px 0px 10px #fed128,
+      -2px 0px 10px #fed128, -1px 0px 10px #f0130b, -2px 0px 10px #f0130b,
+      -4px 0px 10px #f0130b, -1px 0px 10px #f0130b, -2px 0px 10px #f0130b,
+      -4px 0px 10px #f0130b, 2px 0px 10px #f0130b;
+    color: #fed128;
   }
+  50% {
+    text-shadow: -1px 0px 10px #705c12, -1.5px 0px 10px #705c12,
+      -2px 0px 10px #705c12, -1px 0px 10px #5c0704, -2px 0px 10px #5c0704,
+      -4px 0px 10px #5c0704, -1px 0px 10px #5c0704, -2px 0px 10px #5c0704,
+      -4px 0px 10px #5c0704, 2px 0px 10px #5c0704;
+    color: #705c12;
+  }
+}
 
-  .detail-title{
-    font-weight: bold;
-  }
+.detail-title {
+  font-weight: bold;
+}
 
-  .detail-genre{
-    margin: 10px 0px;
-    display: flex;
-    gap: 10px;
-    font-size: 18px;
-  }
+.detail-genre {
+  margin: 10px 0px;
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+}
 
 .modal-dialog {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80%;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
 
-  .modal-body{
-    width: 800px;
-    height: 490px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.modal-body {
+  width: 800px;
+  height: 490px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.youtube_wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.youtube_wrapper iframe {
+  position: absolute;
+}
+
+@media screen and (max-width: 500px) {
+  .modal-body {
+    width: 100%;
+    height: 100%;
   }
+}

@@ -27,7 +27,8 @@ const MoviePage = () => {
     keyword,
     page,
   });
-  console.log("🚀 ~ MoviePage ~ data:", data);
+
+  // console.log("🚀 ~ MoviePage ~ data:", data);
   const {
     data: idData,
     isLoading: idisLoading,
@@ -39,7 +40,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     setPage(1);
-  }, [keyword]);
+  }, [keyword, selectedValue]);
 
   const dataSort = () => {
     if (!data || !data.results) return [];
@@ -63,7 +64,7 @@ const MoviePage = () => {
 
   if (isLoading && idisLoading) {
     return (
-      <div>
+      <div className="spinner_wrapper">
         <Spinner
           animation="border"
           variant="danger"
@@ -151,13 +152,13 @@ const MoviePage = () => {
         <div className="pagination-area">
           {data?.total_pages > 1 && (
             <ReactPaginate
-              nextLabel="next >"
+              nextLabel=">"
               onPageChange={handlePageClick}
               pageRangeDisplayed={3}
               marginPagesDisplayed={2}
               pageCount={data?.total_pages}
               forcePage={page - 1}
-              previousLabel="< previous"
+              previousLabel="<"
               pageClassName="page-item"
               pageLinkClassName="page-link"
               previousClassName="page-item"
@@ -170,6 +171,7 @@ const MoviePage = () => {
               containerClassName="pagination"
               activeClassName="active"
               renderOnZeroPageCount={null}
+              disabledClassName="disabled"
             />
           )}
         </div>

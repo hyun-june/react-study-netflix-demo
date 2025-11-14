@@ -10,7 +10,7 @@ const UpcomingMovieSlide = () => {
   // console.log("upcomingMovie",data)
   if (isLoading) {
     return (
-      <div>
+      <div className="spinner_wrapper">
         <Spinner
           animation="border"
           variant="danger"
